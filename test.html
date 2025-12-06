@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXTPLAY - Game Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .electric-blue {
+            color: #0af;
+        }
+
+        .bg-electric-blue {
+            background-color: #0af;
+        }
+
+        .hover-electric-blue:hover {
+            color: #0af;
+        }
+
+        .border-electric-blue {
+            border-color: #0af;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #0af 0%, #0cf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, rgba(10, 175, 255, 0.1) 0%, rgba(10, 175, 255, 0.05) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 175, 255, 0.15);
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(10, 175, 255, 0.5);
+        }
+
+        .game-icon {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #0af;
+            color: white;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(10, 175, 255, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(10, 175, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(10, 175, 255, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-white">
+    <nav class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tight">NXTPLAY</h1>
+                        <p class="text-xs text-gray-400">Mobile Gaming Hub</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-medium hover:text-cyan-400 transition">Home</a>
+                    <a href="guides.html" class="font-medium hover:text-cyan-400 transition">Guides</a>
+                    <a href="reviews.html" class="font-medium **electric-blue** transition **border-b-2 border-electric-blue**">Reviews</a>
+                    <a href="downloads.html" class="font-medium hover:text-cyan-400 transition">Downloads</a>
+                    <a href="community.html" class="font-medium hover:text-cyan-400 transition">Community</a>
+                    <a href="gear.html" class="font-medium hover:text-cyan-400 transition">Gear</a>
+                    <a href="wallpapers.html" class="font-medium hover:text-cyan-400 transition">Wallpapers</a>
+
+                    <div class="relative">
+                        <input type="text" placeholder="Search..."
+                            class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm focus:outline-none focus:border-cyan-400">
+                        <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-gray-300 text-2xl focus:outline-none">
+                    ☰
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+                <a href="index.html" class="block font-medium hover:text-cyan-400 transition">Home</a>
+                <a href="guides.html" class="block font-medium hover:text-cyan-400 transition">Guides</a>
+                <a href="reviews.html" class="block font-medium **electric-blue** transition">Reviews</a>
+                <a href="downloads.html" class="block font-medium hover:text-cyan-400 transition">Downloads</a>
+                <a href="community.html" class="block font-medium hover:text-cyan-400 transition">Community</a>
+                <a href="gear.html" class="block font-medium hover:text-cyan-400 transition">Gear</a>
+                <a href="wallpapers.html" class="block font-medium hover:text-cyan-400 transition">Wallpapers</a>
+
+                <div class="relative">
+                    <input type="text" placeholder="Search..."
+                        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm focus:outline-none focus:border-cyan-400">
+                    <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+
+    <header class="relative overflow-hidden pt-16 pb-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-950"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-electric-blue/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-electric-blue/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">
+                <span class="block">HONEST & EXPERT</span>
+                <span class="block text-gradient">GAME REVIEWS</span>
+            </h1>
+
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Discover which mobile games are worth your time (and storage space). Our unbiased reviews cover gameplay,
+                graphics, monetization, and more.
+            </p>
+
+            <div class="max-w-xl mx-auto relative">
+                <input type="text" placeholder="Search for a game review (e.g., 'Genshin Impact')..."
+                    class="w-full px-6 py-4 bg-gray-900 border border-gray-800 rounded-2xl text-lg focus:outline-none focus:border-cyan-400 placeholder-gray-500">
+                <i class="fas fa-search absolute right-5 top-4 text-cyan-400 text-xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-10">
+
+                <aside class="lg:w-1/4 p-6 bg-gray-900 border border-gray-800 rounded-xl h-fit">
+                    <h3 class="text-2xl font-bold mb-6 border-b border-gray-800 pb-4">Filter Reviews</h3>
+
+                    <div class="mb-8">
+                        <h4 class="font-bold text-lg electric-blue mb-3">Platform</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>iOS / iPhone</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>Android</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="font-bold text-lg electric-blue mb-3">Genre</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>RPG</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>Shooter (FPS/BR)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>Strategy</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>MOBA</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                                <input type="checkbox" class="accent-electric-blue">
+                                <span>Puzzle</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="font-bold text-lg electric-blue mb-3">Minimum Score</h4>
+                        <select
+                            class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none">
+                            <option>Any Score</option>
+                            <option>8.0+</option>
+                            <option>9.0+</option>
+                        </select>
+                    </div>
+
+                    <button
+                        class="w-full py-3 bg-electric-blue rounded-lg font-bold hover:bg-blue-500 transition duration-200">
+                        Apply Filters
+                    </button>
+                </aside>
+
+                <main class="lg:w-3/4">
+                    <h2 class="text-3xl font-black mb-10">Latest Game Reviews</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        
+                        <a href="review_detail_1.html" class="block bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden card-hover">
+                            <div class="relative">
+                                
+                                <div class="absolute inset-0 bg-black/40"></div>
+                                <span class="absolute top-4 left-4 px-3 py-1 bg-electric-blue rounded-full text-sm font-semibold">New</span>
+                                <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm p-3 rounded-xl border border-electric-blue">
+                                    <div class="text-2xl font-black electric-blue text-center">9.2</div>
+                                    <div class="text-xs text-gray-400">NXTPLAY Score</div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 hover-electric-blue transition">Apex Legends Mobile: Ranks & Review</h3>
+                                <p class="text-sm text-gray-400 mb-4">A high-fidelity battle royale experience that sets a new standard for mobile FPS games.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Reviewed: Oct 15, 2025</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="review_detail_2.html" class="block bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden card-hover">
+                            <div class="relative">
+                                
+                                <div class="absolute inset-0 bg-black/40"></div>
+                                <span class="absolute top-4 left-4 px-3 py-1 bg-green-500 rounded-full text-sm font-semibold">Update</span>
+                                <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm p-3 rounded-xl border border-gray-700">
+                                    <div class="text-2xl font-black text-white text-center">7.5</div>
+                                    <div class="text-xs text-gray-400">NXTPLAY Score</div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 hover-electric-blue transition">Genshin Impact Patch 5.0 Review</h3>
+                                <p class="text-sm text-gray-400 mb-4">An engaging new region and story quest, but the grind remains intensive.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Reviewed: Sep 28, 2025</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="review_detail_3.html" class="block bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden card-hover">
+                            <div class="relative">
+                                
+                                <div class="absolute inset-0 bg-black/40"></div>
+                                <span class="absolute top-4 left-4 px-3 py-1 bg-yellow-500 rounded-full text-sm font-semibold">Hot</span>
+                                <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm p-3 rounded-xl border border-electric-blue">
+                                    <div class="text-2xl font-black electric-blue text-center">8.8</div>
+                                    <div class="text-xs text-gray-400">NXTPLAY Score</div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 hover-electric-blue transition">Wild Rift New Season Deep Dive</h3>
+                                <p class="text-sm text-gray-400 mb-4">The ultimate mobile MOBA polished to a mirror shine, perfectly balanced for competitive play.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Reviewed: Aug 10, 2025</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="review_detail_4.html" class="block bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden card-hover">
+                            <div class="relative">
+                                
+                                <div class="absolute inset-0 bg-black/40"></div>
+                                <span class="absolute top-4 left-4 px-3 py-1 bg-gray-500 rounded-full text-sm font-semibold">Casual</span>
+                                <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm p-3 rounded-xl border border-gray-700">
+                                    <div class="text-2xl font-black text-white text-center">6.9</div>
+                                    <div class="text-xs text-gray-400">NXTPLAY Score</div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 hover-electric-blue transition">Merge Mania: Is it worth the time?</h3>
+                                <p class="text-sm text-gray-400 mb-4">A decent time-waster, but the intrusive ads and paywall issues bring down the final score.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Reviewed: Jul 22, 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <a href="review_detail_5.html" class="block bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden card-hover">
+                            <div class="relative">
+                                
+                                <div class="absolute inset-0 bg-black/40"></div>
+                                <span class="absolute top-4 left-4 px-3 py-1 bg-electric-blue rounded-full text-sm font-semibold">Must-Play</span>
+                                <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm p-3 rounded-xl border border-electric-blue">
+                                    <div class="text-2xl font-black electric-blue text-center">9.5</div>
+                                    <div class="text-xs text-gray-400">NXTPLAY Score</div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 hover-electric-blue transition">Starfall Saga: A Deep Dive into End Game</h3>
+                                <p class="text-sm text-gray-400 mb-4">A massive, stunning RPG with an unprecedented amount of free content and world-building.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Reviewed: Jun 05, 2025</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="review_detail_6.html" class="block bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden card-hover">
+                            <div class="relative">
+                                
+                                <div class="absolute inset-0 bg-black/40"></div>
+                                <span class="absolute top-4 left-4 px-3 py-1 bg-yellow-600 rounded-full text-sm font-semibold">Racing</span>
+                                <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm p-3 rounded-xl border border-gray-700">
+                                    <div class="text-2xl font-black text-white text-center">7.8</div>
+                                    <div class="text-xs text-gray-400">NXTPLAY Score</div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 hover-electric-blue transition">Rogue Racers: Console Quality, Mobile Price</h3>
+                                <p class="text-sm text-gray-400 mb-4">Beautiful graphics and fast-paced action, but the controls are overly sensitive on smaller screens.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Reviewed: May 18, 2025</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="flex justify-center items-center space-x-4 mt-12">
+                        <button class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 hover:bg-gray-700 transition">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="px-4 py-2 bg-electric-blue rounded-lg font-bold">1</span>
+                        <a href="#" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">2</a>
+                        <a href="#" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">3</a>
+                        <button class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 hover:bg-gray-700 transition">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                
+                <div class="col-span-2 lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                            <i class="fas fa-gamepad text-white text-lg"></i>
+                        </div>
+                        <h1 class="text-xl font-black tracking-tight">NXTPLAY</h1>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">The ultimate hub for mobile gaming enthusiasts. Level up your play.</p>
+                    <div class="flex space-x-4 text-gray-400">
+                        <a href="#" class="hover-electric-blue"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="hover-electric-blue"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover-electric-blue"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover-electric-blue"><i class="fab fa-discord text-xl"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4 electric-blue">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="guides.html" class="hover:text-white transition">Guides</a></li>
+                        <li><a href="reviews.html" class="hover:text-white transition">Reviews</a></li>
+                        <li><a href="downloads.html" class="hover:text-white transition">Downloads</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4 electric-blue">Resources</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="gear.html" class="hover:text-white transition">Gaming Gear</a></li>
+                        <li><a href="wallpapers.html" class="hover:text-white transition">Wallpapers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Media Kit</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4 electric-blue">Community</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="community.html" class="hover:text-white transition">Forums</a></li>
+                        <li><a href="#" class="hover:text-white transition">Discord Server</a></li>
+                        <li><a href="#" class="hover:text-white transition">Submit a Tip</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4 electric-blue">Legal</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                &copy; 2025 NXTPLAY. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
