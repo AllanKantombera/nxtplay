@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXTPLAY - Mobile Gaming Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .electric-blue {
+            color: #0af;
+        }
+
+        .bg-electric-blue {
+            background-color: #0af;
+        }
+
+        .hover-electric-blue:hover {
+            color: #0af;
+        }
+
+        .border-electric-blue {
+            border-color: #0af;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, rgba(10, 175, 255, 0.1) 0%, rgba(10, 175, 255, 0.05) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 175, 255, 0.15);
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(10, 175, 255, 0.5);
+        }
+
+        .game-icon {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #0af;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(10, 175, 255, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(10, 175, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(10, 175, 255, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tight">NXTPLAY</h1>
+                        <p class="text-xs text-gray-400">Mobile Gaming Hub</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-medium hover:text-cyan-400 transition">Home</a>
+                    <a href="guides.html" class="font-medium hover:text-cyan-400 transition">Guides</a>
+                    <a href="reviews.html" class="font-medium hover:text-cyan-400 transition">Reviews</a>
+                    <a href="downloads.html" class="font-medium hover:text-cyan-400 transition">Downloads</a>
+                    <a href="community.html" class="font-medium hover:text-cyan-400 transition">Community</a>
+                    <a href="gear.html" class="font-medium hover:text-cyan-400 transition">Gear</a>
+                    <a href="wallpapers.html" class="font-medium hover:text-cyan-400 transition">Wallpapers</a>
+
+                    <!-- Search -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..."
+                            class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm focus:outline-none focus:border-cyan-400">
+                        <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-300 text-2xl focus:outline-none">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+                <a href="index.html" class="block font-medium hover:text-cyan-400 transition">Home</a>
+                <a href="guides.html" class="block font-medium hover:text-cyan-400 transition">Guides</a>
+                <a href="reviews.html" class="block font-medium hover:text-cyan-400 transition">Reviews</a>
+                <a href="downloads.html" class="block font-medium hover:text-cyan-400 transition">Downloads</a>
+                <a href="community.html" class="block font-medium hover:text-cyan-400 transition">Community</a>
+                <a href="gear.html" class="block font-medium hover:text-cyan-400 transition">Gear</a>
+                <a href="wallpapers.html" class="block font-medium hover:text-cyan-400 transition">Wallpapers</a>
+
+                <!-- Search (Mobile) -->
+                <div class="relative">
+                    <input type="text" placeholder="Search..."
+                        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm focus:outline-none focus:border-cyan-400">
+                    <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    
+    <section class="py-20 bg-gray-900/50">
+        <h1 class="text-4xl text-center font-black mb-10 pb-4">Guides</h1>
+        <div class="container mx-auto px-6">
+            
+            
+
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 mb-10 flex flex-col sm:flex-row gap-4 items-center">
+                
+                <div class="flex-1 w-full sm:w-auto">
+                  
+                </div>
+
+                <div class="sm:w-48 w-full">
+                     <select
+                        class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none text-white">
+                        <option>All Categories</option>
+                        <option>Beginner Tips</option>
+                        <option>Advanced Builds</option>
+                        <option>Event Walkthroughs</option>
+                        <option>Tier Lists</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                
+                <a href="guide_detail_1.html" class="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjB0dXRvcmlhbHxlbnwwfHx8fDE3MDI0MjQwMzN8MA&ixlib=rb-4.0.3&q=80&w=800" alt="Beginner guide image" class="w-full h-40 object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-green-600 rounded-full text-xs font-semibold">Beginner</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 hover-electric-blue transition truncate">Starfall Saga: Your First 10 Hours Walkthrough</h3>
+                        <p class="text-sm text-gray-400 mb-3 line-clamp-2">Master the initial questlines, resource management, and character selection for a smooth start.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-user-edit mr-1"></i> By Jane Doe</span>
+                            <span><i class="fas fa-clock mr-1"></i> Updated 2 days ago</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="guide_detail_2.html" class="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1594917951554-1521a0d7f2a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxTbW9rZXklMjBjYW1waW5nfGVufDB8fHx8MTcwMjQyNDA1NHww&ixlib=rb-4.0.3&q=80&w=800" alt="Advanced strategy image" class="w-full h-40 object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-yellow-600 rounded-full text-xs font-semibold">Advanced Build</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 hover-electric-blue transition truncate">Wild Rift: ADC Meta Builds for Patch 4.5</h3>
+                        <p class="text-sm text-gray-400 mb-3 line-clamp-2">A deep breakdown of optimal item paths and rune choices for marksmen in the current meta.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-user-edit mr-1"></i> By Expert Gamer</span>
+                            <span><i class="fas fa-clock mr-1"></i> Updated 6 hours ago</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="guide_detail_3.html" class="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38548a0ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxpbnZlbnRvcnl8ZW58MHx8fHwxNzAyNDI0MDczfDA&ixlib=rb-4.0.3&q=80&w=800" alt="Tier list image" class="w-full h-40 object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-red-600 rounded-full text-xs font-semibold">Tier List</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 hover-electric-blue transition truncate">Apex Legends Mobile: Weapon Tier List Season 10</h3>
+                        <p class="text-sm text-gray-400 mb-3 line-clamp-2">Ranking all weapons from S-tier to D-tier based on current balance changes and damage output.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-user-edit mr-1"></i> By Rank Master</span>
+                            <span><i class="fas fa-clock mr-1"></i> Updated 1 day ago</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="guide_detail_4.html" class="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1579758509312-3c1e29e92d4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxnYW1lJTIwZXZlbnRzfGVufDB8fHx8MTcwMjQyNDA5NHww&ixlib=rb-4.0.3&q=80&w=800" alt="Event walkthrough image" class="w-full h-40 object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-purple-600 rounded-full text-xs font-semibold">Event Guide</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 hover-electric-blue transition truncate">Genshin Impact: Lantern Rite Festival Full Rewards Guide</h3>
+                        <p class="text-sm text-gray-400 mb-3 line-clamp-2">Don't miss a thing! A complete map and strategy for collecting all tokens and claiming prizes.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-user-edit mr-1"></i> By Daily Quest</span>
+                            <span><i class="fas fa-clock mr-1"></i> Updated 3 days ago</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="guide_detail_5.html" class="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542456209-4171694b2979?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxHdWlkZSUyMGdhbWVzfGVufDB8fHx8MTcwMjQyNDEwN3ww&ixlib=rb-4.0.3&q=80&w=800" alt="Mobile game tips image" class="w-full h-40 object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-green-600 rounded-full text-xs font-semibold">Beginner</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 hover-electric-blue transition truncate">Merge Mania: Top 5 Money Saving Tips</h3>
+                        <p class="text-sm text-gray-400 mb-3 line-clamp-2">How to minimize microtransactions and maximize your gem earning potential through clever play.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-user-edit mr-1"></i> By Puzzle Pro</span>
+                            <span><i class="fas fa-clock mr-1"></i> Updated 1 week ago</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="guide_detail_6.html" class="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxQcm8lMjBnYW1lcnxlbnwwfHx8fDE3MDI0MjQxMTh8MA&ixlib=rb-4.0.3&q=80&w=800" alt="Advanced competitive gaming image" class="w-full h-40 object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-yellow-600 rounded-full text-xs font-semibold">Advanced Build</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 hover-electric-blue transition truncate">Rogue Racers: Max Speed Tuning and Drift Strategy</h3>
+                        <p class="text-sm text-gray-400 mb-3 line-clamp-2">The exact tuning ratios and drift lines needed to dominate the global leaderboards.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-user-edit mr-1"></i> By Speed Demon</span>
+                            <span><i class="fas fa-clock mr-1"></i> Updated 4 days ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flex justify-center items-center space-x-4 mt-12">
+                <button class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 hover:bg-gray-700 transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="px-4 py-2 bg-electric-blue rounded-lg font-bold">1</span>
+                <a href="#" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">2</a>
+                <a href="#" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">3</a>
+                <button class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 hover:bg-gray-700 transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-900 pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                            <i class="fas fa-gamepad text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black">NXTPLAY</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Your Next Move Starts Here. The ultimate hub for mobile gaming guides, reviews, mods, and
+                        accessories.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Explore</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Game Reviews</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Pro Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Mods & Downloads</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Gaming Gear</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Community</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Forums</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Tournaments</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Leaderboards</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Streamers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-envelope mr-2"></i> support@nxtplay.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2025 NxtPlay. All Rights Reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Cookie Policy</a>
+                    <a href="#" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <!-- Toggle Script -->
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

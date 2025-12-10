@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXTPLAY - Mobile Gaming Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .electric-blue {
+            color: #0af;
+        }
+
+        .bg-electric-blue {
+            background-color: #0af;
+        }
+
+        .hover-electric-blue:hover {
+            color: #0af;
+        }
+
+        .border-electric-blue {
+            border-color: #0af;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, rgba(10, 175, 255, 0.1) 0%, rgba(10, 175, 255, 0.05) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 175, 255, 0.15);
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(10, 175, 255, 0.5);
+        }
+
+        .game-icon {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #0af;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(10, 175, 255, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(10, 175, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(10, 175, 255, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black tracking-tight">NXTPLAY</h1>
+                        <p class="text-xs text-gray-400">Mobile Gaming Hub</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="font-medium hover:text-cyan-400 transition">Home</a>
+                    <a href="guides.html" class="font-medium hover:text-cyan-400 transition">Guides</a>
+                    <a href="reviews.html" class="font-medium hover:text-cyan-400 transition">Reviews</a>
+                    <a href="downloads.html" class="font-medium hover:text-cyan-400 transition">Downloads</a>
+                    <a href="community.html" class="font-medium hover:text-cyan-400 transition">Community</a>
+                    <a href="gear.html" class="font-medium hover:text-cyan-400 transition">Gear</a>
+                    <a href="wallpapers.html" class="font-medium hover:text-cyan-400 transition">Wallpapers</a>
+
+                    <!-- Search -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search..."
+                            class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm focus:outline-none focus:border-cyan-400">
+                        <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-300 text-2xl focus:outline-none">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 md:hidden">
+                <a href="index.html" class="block font-medium hover:text-cyan-400 transition">Home</a>
+                <a href="guides.html" class="block font-medium hover:text-cyan-400 transition">Guides</a>
+                <a href="reviews.html" class="block font-medium hover:text-cyan-400 transition">Reviews</a>
+                <a href="downloads.html" class="block font-medium hover:text-cyan-400 transition">Downloads</a>
+                <a href="community.html" class="block font-medium hover:text-cyan-400 transition">Community</a>
+                <a href="gear.html" class="block font-medium hover:text-cyan-400 transition">Gear</a>
+                <a href="wallpapers.html" class="block font-medium hover:text-cyan-400 transition">Wallpapers</a>
+
+                <!-- Search (Mobile) -->
+                <div class="relative">
+                    <input type="text" placeholder="Search..."
+                        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm focus:outline-none focus:border-cyan-400">
+                    <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    
+
+
+    <section class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            
+            <h1 class="text-4xl font-black electric-blue mb-10 border-b border-gray-800 pb-4">
+                <i class="fas fa-image mr-3"></i> HD Mobile Gaming Wallpapers
+            </h1>
+
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 mb-10 flex flex-wrap gap-4 items-center">
+                
+                <div class="flex-1 min-w-[200px] sm:min-w-0 sm:flex-grow">
+                    <div class="relative">
+                        <input type="text" placeholder="Search by game, style, or artist..."
+                            class="w-full p-3 pl-10 bg-gray-800 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none text-white text-sm">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div class="min-w-[120px] max-w-[180px]">
+                    <select
+                        class="w-full text-sm p-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none text-white">
+                        <option>Aspect Ratio</option>
+                        <option>16:9 (Tablet)</option>
+                        <option>18:9 (Mobile)</option>
+                        <option>21:9 (Ultra-wide)</option>
+                    </select>
+                </div>
+
+                <div class="min-w-[120px] max-w-[180px]">
+                     <select
+                        class="w-full text-sm p-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none text-white">
+                        <option>Category</option>
+                        <option>Abstract</option>
+                        <option>Character Art</option>
+                        <option>Landscapes</option>
+                        <option>Minimalist</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                
+                <div class="relative group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-electric-blue transition duration-300 card-hover">
+                    <img src="https://images.unsplash.com/photo-1547082298-6e9b4d137f61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxGcmVlJTIwZ2FtZSUyMHdhbGxwYXBlcnxlbnwwfHx8fDE3MDI0MjQzNTh8MA&ixlib=rb-4.0.3&q=80&w=400" 
+                         alt="Cyberpunk Cityscape" 
+                         class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-x-0 top-0 bottom-7 bg-black bg-opacity-30 flex flex-col justify-end p-3 transition duration-300">
+                        <p class="text-sm font-semibold text-white truncate mb-2">Cyberpunk Cityscape (21:9)</p>
+                        <a href="/download/wallpaper1.jpg" download 
+                           class="flex items-center justify-center py-2 bg-electric-blue text-black font-bold text-xs rounded hover:bg-cyan-400 transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </a>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-2 bg-gray-950 bg-opacity-90 text-xs text-gray-400 flex justify-between z-10">
+                        <span><i class="fas fa-tag mr-1"></i> Abstract</span>
+                        <span>HD</span>
+                    </div>
+                </div>
+
+                <div class="relative group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-electric-blue transition duration-300 card-hover">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxNb2JpbGUlMjBHYW1lJTIwQ2hhcmFjdGVyJTIwQnJhcGUtb2ZmfGVufDB8fHx8MTcwMjQyNDI3OHww&ixlib=rb-4.0.3&q=80&w=400" 
+                         alt="Hero Character Art" 
+                         class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-x-0 top-0 bottom-7 bg-black bg-opacity-30 flex flex-col justify-end p-3 transition duration-300">
+                        <p class="text-sm font-semibold text-white truncate mb-2">Mythic Hero - Dawn of Battle (18:9)</p>
+                        <a href="/download/wallpaper2.jpg" download 
+                           class="flex items-center justify-center py-2 bg-electric-blue text-black font-bold text-xs rounded hover:bg-cyan-400 transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </a>
+                    </div>
+                    
+                    <div class="absolute bottom-0 left-0 right-0 p-2 bg-gray-950 bg-opacity-90 text-xs text-gray-400 flex justify-between z-10">
+                        <span><i class="fas fa-tag mr-1"></i> Character Art</span>
+                        <span>4K</span>
+                    </div>
+                </div>
+
+                <div class="relative group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-electric-blue transition duration-300 card-hover">
+                    <img src="https://images.unsplash.com/photo-1596700085871-dd39c8789886?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxHcmVlbiUyMExhbmRzY2FwZSUyMEdhbWluZ3xlbnwwfHx8fDE3MDI0MjQyNzh8MA&ixlib=rb-4.0.3&q=80&w=400" 
+                         alt="Fantasy Landscape" 
+                         class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-x-0 top-0 bottom-7 bg-black bg-opacity-30 flex flex-col justify-end p-3 transition duration-300">
+                        <p class="text-sm font-semibold text-white truncate mb-2">Floating Islands - Sky Fortress (16:9)</p>
+                        <a href="/download/wallpaper3.jpg" download 
+                           class="flex items-center justify-center py-2 bg-electric-blue text-black font-bold text-xs rounded hover:bg-cyan-400 transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </a>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 bg-gray-950 bg-opacity-90 text-xs text-gray-400 flex justify-between z-10">
+                        <span><i class="fas fa-tag mr-1"></i> Landscapes</span>
+                        <span>HD</span>
+                    </div>
+                </div>
+
+                <div class="relative group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-electric-blue transition duration-300 card-hover hidden lg:block">
+                    <img src="https://images.unsplash.com/photo-1511394178657-61c324c03f57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTcxNzN8MHwxfHNlYXJjaHwxfHxNaW5pbWFsaXN0JTIwR2FtaW5nfGVufDB8fHx8MTcwMjQyNDU3M3ww&lib=rb-4.0.3&q=80&w=400" 
+                         alt="Minimalist Logo" 
+                         class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-x-0 top-0 bottom-7 bg-black bg-opacity-30 flex flex-col justify-end p-3 transition duration-300">
+                        <p class="text-sm font-semibold text-white truncate mb-2">Minimalist Game Logo (18:9)</p>
+                        <a href="/download/wallpaper4.jpg" download 
+                           class="flex items-center justify-center py-2 bg-electric-blue text-black font-bold text-xs rounded hover:bg-cyan-400 transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </a>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-2 bg-gray-950 bg-opacity-90 text-xs text-gray-400 flex justify-between z-10">
+                        <span><i class="fas fa-tag mr-1"></i> Minimalist</span>
+                        <span>4K</span>
+                    </div>
+                </div>
+
+                </div>
+
+            <div class="flex justify-center items-center space-x-4 mt-12">
+                <button class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 hover:bg-gray-700 transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="px-4 py-2 bg-electric-blue rounded-lg font-bold">1</span>
+                <a href="#" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">2</a>
+                <a href="#" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">3</a>
+                <button class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 hover:bg-gray-700 transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-900 pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                            <i class="fas fa-gamepad text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black">NXTPLAY</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Your Next Move Starts Here. The ultimate hub for mobile gaming guides, reviews, mods, and
+                        accessories.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Explore</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Game Reviews</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Pro Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Mods & Downloads</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Gaming Gear</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Community</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Forums</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Tournaments</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Leaderboards</a></li>
+                        <li><a href="#" class="text-gray-400 hover-electric-blue transition">Streamers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center hover:bg-electric-blue transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-envelope mr-2"></i> support@nxtplay.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2025 NxtPlay. All Rights Reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Cookie Policy</a>
+                    <a href="#" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <!-- Toggle Script -->
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>
