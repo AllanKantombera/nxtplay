@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXTPLAY // Admin Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar-gradient {
+            background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+        }
+
+        .active-link {
+            background: rgba(14, 165, 233, 0.1);
+            border-right: 4px solid #0ea5e9;
+            color: #38bdf8;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-[#020617] text-slate-200 font-sans flex min-h-screen overflow-hidden">
+
+    <aside class="w-64 sidebar-gradient border-r border-slate-800 flex flex-col">
+        <div class="p-6 border-b border-slate-800 flex items-center space-x-3">
+            <div
+                class="w-10 h-10 bg-sky-500 rounded shadow-[0_0_15px_rgba(14,165,233,0.5)] flex items-center justify-center">
+                <img src="img/logo2.png">
+            </div>
+            <span class="font-black tracking-tighter text-xl">NXTPLAY <span
+                    class="text-sky-500 text-xs">ADMIN</span></span>
+        </div>
+
+        <nav class="flex-1 py-6 space-y-1">
+            <a href="index.html" class="active-link flex items-center px-6 py-3 space-x-4 transition">
+                <i class="fas fa-chart-line w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a href="games.html"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-gamepad w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Games</span>
+            </a>
+            <a href="content.html"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-file-alt w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Content</span>
+            </a>
+            <a href="downloads.html"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-download w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Downloads</span>
+            </a>
+            <a href="wallpapers.html"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-images w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Wallpapers</span>
+            </a>
+            <a href="community.html"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-file-alt w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Community</span>
+            </a>
+            <a href="analytics.html"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-file-alt w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Analytics</span>
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-slate-800">
+            <button
+                class="w-full bg-slate-800 hover:bg-red-900/40 text-red-400 text-xs font-bold py-2 rounded transition border border-red-900/20 uppercase tracking-widest">
+                System Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto">
+
+        <header
+            class="h-16 border-b border-slate-800 bg-[#020617]/80 backdrop-blur-md px-8 flex items-center justify-between sticky top-0 z-10">
+            <div class="flex items-center space-x-4">
+                <span
+                    class="text-[10px] font-mono text-sky-500 bg-sky-500/10 px-2 py-1 rounded border border-sky-500/20">SYSTEM_READY</span>
+                <span class="text-[10px] font-mono text-slate-500 uppercase">Location: Root/CommandCenter</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <i class="fas fa-bell text-slate-500 hover:text-sky-400 cursor-pointer"></i>
+                <div class="flex items-center space-x-3 border-l border-slate-800 pl-6">
+                    <span class="text-xs font-bold">Admin_User</span>
+                    <div class="w-8 h-8 rounded-full bg-slate-700 border border-sky-500/50"></div>
+                </div>
+            </div>
+        </header>
+
+        <div
+            class="max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-sky-500/40 hover:scrollbar-thumb-sky-500 scrollbar-track-slate-950/50 pr-2">
+
+            <section class="p-8">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-black uppercase italic tracking-tighter">Command <span
+                            class="text-sky-500">Center</span></h2>
+                    <p class="text-slate-500 text-xs font-mono">Real-time site diagnostics and performance metrics.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div class="stat-card p-6 rounded-2xl">
+                        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Active Sessions
+                        </p>
+                        <div class="flex items-end space-x-2">
+                            <span class="text-3xl font-black text-white">12,482</span>
+                            <span class="text-green-500 text-xs font-bold mb-1">+12%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl">
+                        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">File Transfers
+                        </p>
+                        <div class="flex items-end space-x-2">
+                            <span class="text-3xl font-black text-white">1.2 TB</span>
+                            <span class="text-sky-500 text-xs font-bold mb-1">LIVE</span>
+                        </div>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl">
+                        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">New Guides</p>
+                        <div class="flex items-end space-x-2">
+                            <span class="text-3xl font-black text-white">48</span>
+                            <span class="text-slate-500 text-xs font-bold mb-1">Today</span>
+                        </div>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl border-sky-500/50 bg-sky-500/5">
+                        <p class="text-sky-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Security Score</p>
+                        <div class="flex items-end space-x-2">
+                            <span class="text-3xl font-black text-white">A+</span>
+                            <span class="text-sky-500 text-xs font-bold mb-1 italic underline">Scan Now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card rounded-2xl overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-800 flex justify-between items-center bg-slate-900/30">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-sky-400">Recent Content Deployments
+                        </h3>
+                        <button
+                            class="text-[10px] bg-sky-500 text-black px-3 py-1 rounded font-black uppercase tracking-widest">New
+                            Entry</button>
+                    </div>
+                    <table class="w-full text-left text-sm">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800 uppercase text-[10px] tracking-widest">
+                                <th class="px-6 py-4">Status</th>
+                                <th class="px-6 py-4">Title</th>
+                                <th class="px-6 py-4">Category</th>
+                                <th class="px-6 py-4">Author</th>
+                                <th class="px-6 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr class="hover:bg-slate-800/30 transition">
+                                <td class="px-6 py-4"><span
+                                        class="w-2 h-2 rounded-full bg-green-500 inline-block mr-2 shadow-[0_0_8px_#22c55e]"></span>
+                                    <span class="text-xs font-mono">Live</span>
+                                </td>
+                                <td class="px-6 py-4 font-bold">Call of Duty Mobile: S3 Loadouts</td>
+                                <td class="px-6 py-4 text-slate-400">Guides</td>
+                                <td class="px-6 py-4">Admin_Ghost</td>
+                                <td class="px-6 py-4 text-sky-500 cursor-pointer hover:underline text-xs">Edit // View
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition">
+                                <td class="px-6 py-4"><span
+                                        class="w-2 h-2 rounded-full bg-yellow-500 inline-block mr-2"></span> <span
+                                        class="text-xs font-mono text-yellow-500">Draft</span></td>
+                                <td class="px-6 py-4 font-bold">Best Gaming Phones Under $300</td>
+                                <td class="px-6 py-4 text-slate-400">Reviews</td>
+                                <td class="px-6 py-4">Tech_Wizard</td>
+                                <td class="px-6 py-4 text-sky-500 cursor-pointer hover:underline text-xs">Edit // View
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

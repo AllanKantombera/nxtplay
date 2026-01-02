@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXTPLAY // Admin Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar-gradient {
+            background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+        }
+
+        .active-link {
+            background: rgba(14, 165, 233, 0.1);
+            border-right: 4px solid #0ea5e9;
+            color: #38bdf8;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-[#020617] text-slate-200 font-sans flex min-h-screen overflow-hidden">
+
+    <aside class="w-64 sidebar-gradient border-r border-slate-800 flex flex-col">
+        <div class="p-6 border-b border-slate-800 flex items-center space-x-3">
+            <div
+                class="w-10 h-10 bg-sky-500 rounded shadow-[0_0_15px_rgba(14,165,233,0.5)] flex items-center justify-center">
+                <img src="img/logo2.png">
+            </div>
+            <span class="font-black tracking-tighter text-xl">NXTPLAY <span
+                    class="text-sky-500 text-xs">ADMIN</span></span>
+        </div>
+
+        <nav class="flex-1 py-6 space-y-1">
+            <a href="#" class="active-link flex items-center px-6 py-3 space-x-4 transition">
+                <i class="fas fa-chart-line w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Dashboard</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-gamepad w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Games</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-file-alt w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Content</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-download w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Downloads</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-6 py-3 space-x-4 text-slate-400 hover:text-sky-400 hover:bg-slate-800/50 transition">
+                <i class="fas fa-images w-5"></i>
+                <span class="text-sm font-bold uppercase tracking-widest">Wallpapers</span>
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-slate-800">
+            <button
+                class="w-full bg-slate-800 hover:bg-red-900/40 text-red-400 text-xs font-bold py-2 rounded transition border border-red-900/20 uppercase tracking-widest">
+                System Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col">
+
+        <header
+            class="h-16 border-b border-slate-800 bg-[#020617]/80 backdrop-blur-md px-8 flex items-center justify-between sticky top-0 z-10">
+            <div class="flex items-center space-x-4">
+                <span
+                    class="text-[10px] font-mono text-sky-500 bg-sky-500/10 px-2 py-1 rounded border border-sky-500/20">SYSTEM_READY</span>
+                <span class="text-[10px] font-mono text-slate-500 uppercase">Location: Root/CommandCenter</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <i class="fas fa-bell text-slate-500 hover:text-sky-400 cursor-pointer"></i>
+                <div class="flex items-center space-x-3 border-l border-slate-800 pl-6">
+                    <span class="text-xs font-bold">Admin_User</span>
+                    <div class="w-8 h-8 rounded-full bg-slate-700 border border-sky-500/50"></div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-sky-500/40 hover:scrollbar-thumb-sky-500 scrollbar-track-transparent pr-2">
+        <section class="p-8 space-y-12">
+
+            <div>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-black uppercase tracking-tighter italic">Game <span
+                            class="text-sky-500">Telemetry</span></h2>
+                    <p class="text-slate-500 text-xs font-mono uppercase tracking-widest">// Monitoring live data
+                        streams</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-slate-900/50 backdrop-blur-md border border-slate-800 p-6 rounded-2xl relative overflow-hidden group hover:border-sky-500/50 transition">
+                        <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-30 transition">
+                            <i class="fas fa-download text-4xl"></i>
+                        </div>
+                        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Total Downloads
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-4xl font-black text-white">42.8K</span>
+                            <span class="text-green-500 text-xs font-mono">+5.2%</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-slate-900/50 backdrop-blur-md border border-slate-800 p-6 rounded-2xl relative overflow-hidden group hover:border-sky-500/50 transition">
+                        <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-30 transition">
+                            <i class="fas fa-mouse-pointer text-4xl"></i>
+                        </div>
+                        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Link
+                            Interactions</p>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-4xl font-black text-white">128.5K</span>
+                            <span class="text-sky-500 text-xs font-mono">LIVE</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-slate-900/50 backdrop-blur-md border border-sky-500/20 p-6 rounded-2xl relative overflow-hidden group shadow-[0_0_20px_rgba(14,165,233,0.05)]">
+                        <p class="text-sky-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Top Active Asset
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl font-black text-white uppercase italic">COD: MOBILE</span>
+                            <span class="bg-sky-500 text-black text-[10px] font-black px-2 py-0.5 rounded">MODS</span>
+                        </div>
+                        <p class="text-slate-500 text-xs mt-2 font-mono">8.4k Clicks / 24h</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <h2 class="text-2xl font-black uppercase tracking-tighter italic mb-2">Ingest <span
+                                class="text-sky-500">Asset</span></h2>
+                        <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mb-8">// Add new entry to
+                            database</p>
+
+                        <form class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl space-y-4">
+                            <div>
+                                <label
+                                    class="block text-[10px] font-bold text-slate-500 uppercase mb-1 tracking-widest">Game
+                                    Title</label>
+                                <input type="text" placeholder="e.g. Genshin Impact"
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-sky-500 transition">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-bold text-slate-500 uppercase mb-1 tracking-widest">Platform</label>
+                                    <select
+                                        class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-sky-500 text-slate-400">
+                                        <option>Android</option>
+                                        <option>iOS</option>
+                                        <option>Universal</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-bold text-slate-500 uppercase mb-1 tracking-widest">Version</label>
+                                    <input type="text" placeholder="v1.0.4"
+                                        class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-sky-500 transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-[10px] font-bold text-slate-500 uppercase mb-1 tracking-widest">Download
+                                    / Affiliate Link</label>
+                                <input type="url" placeholder="https://..."
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-sky-500 transition">
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-[10px] font-bold text-slate-500 uppercase mb-1 tracking-widest">Thumbnail
+                                    URL</label>
+                                <div
+                                    class="flex items-center justify-center w-full bg-slate-950 border-2 border-dashed border-slate-800 rounded-lg p-4 hover:border-sky-500/50 cursor-pointer transition">
+                                    <div class="text-center">
+                                        <i class="fas fa-cloud-upload-alt text-slate-600 mb-2"></i>
+                                        <p class="text-[10px] text-slate-500 uppercase">Click to upload media</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full bg-sky-500 hover:bg-sky-400 text-black font-black py-4 rounded-xl uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(14,165,233,0.3)] transition transform active:scale-95">
+                                [ Deploy to Database ]
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h2 class="text-2xl font-black uppercase tracking-tighter italic mb-2">Registry <span
+                            class="text-sky-500">Explorer</span></h2>
+                    <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mb-8">// Manage existing game
+                        entries</p>
+
+                    <div class="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden">
+                        <div class="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-950/50">
+                            <div class="relative">
+                                <i class="fas fa-search absolute left-3 top-2.5 text-slate-600 text-xs"></i>
+                                <input type="text" placeholder="Search registry..."
+                                    class="bg-slate-900 border border-slate-800 rounded-full py-2 pl-9 pr-4 text-xs focus:outline-none focus:border-sky-500 transition w-64">
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="p-2 text-slate-500 hover:text-sky-400 transition"><i
+                                        class="fas fa-filter"></i></button>
+                                <button class="p-2 text-slate-500 hover:text-sky-400 transition"><i
+                                        class="fas fa-sync-alt"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead
+                                    class="text-[10px] font-bold uppercase tracking-widest text-slate-500 bg-slate-950/30">
+                                    <tr>
+                                        <th class="px-6 py-4">Entry</th>
+                                        <th class="px-6 py-4 text-center">Status</th>
+                                        <th class="px-6 py-4 text-center">Platform</th>
+                                        <th class="px-6 py-4 text-center">Clicks</th>
+                                        <th class="px-6 py-4 text-right">Admin</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr class="hover:bg-sky-500/5 transition group">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-10 h-10 bg-slate-800 rounded-lg flex-shrink-0"></div>
+                                                <div>
+                                                    <p
+                                                        class="font-black text-white uppercase group-hover:text-sky-400 transition">
+                                                        Free Fire Max</p>
+                                                    <p class="text-[10px] text-slate-500 font-mono">ID: FF_MX_2025</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <span
+                                                class="px-2 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-black uppercase border border-green-500/20 shadow-[0_0_10px_rgba(34,197,94,0.1)]">Active</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <div class="flex justify-center space-x-2 text-slate-400">
+                                                <i class="fab fa-android hover:text-sky-400 transition"></i>
+                                                <i class="fab fa-apple hover:text-sky-400 transition"></i>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-center font-mono text-xs text-white">12,402</td>
+                                        <td class="px-6 py-4 text-right space-x-3">
+                                            <button class="text-slate-500 hover:text-sky-500 transition"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="text-slate-500 hover:text-red-500 transition"><i
+                                                    class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="hover:bg-sky-500/5 transition group">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-10 h-10 bg-slate-800 rounded-lg flex-shrink-0"></div>
+                                                <div>
+                                                    <p
+                                                        class="font-black text-white uppercase group-hover:text-sky-400 transition">
+                                                        Pubg New State</p>
+                                                    <p class="text-[10px] text-slate-500 font-mono">ID: PG_NS_2025</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <span
+                                                class="px-2 py-1 rounded-full bg-yellow-500/10 text-yellow-500 text-[10px] font-black uppercase border border-yellow-500/20">Pending</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <div class="flex justify-center text-slate-400">
+                                                <i class="fab fa-android hover:text-sky-400 transition"></i>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-center font-mono text-xs text-white">3,110</td>
+                                        <td class="px-6 py-4 text-right space-x-3">
+                                            <button class="text-slate-500 hover:text-sky-500 transition"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="text-slate-500 hover:text-red-500 transition"><i
+                                                    class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="p-4 bg-slate-950/50 border-t border-slate-800 flex justify-between items-center">
+                            <p class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Showing entries
+                                1-10 of 482</p>
+                            <div class="flex space-x-2">
+                                <button
+                                    class="bg-slate-900 border border-slate-800 px-3 py-1 rounded text-xs hover:border-sky-500 transition">Prev</button>
+                                <button
+                                    class="bg-slate-900 border border-slate-800 px-3 py-1 rounded text-xs hover:border-sky-500 transition">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    </main>
+</body>
+
+</html>
